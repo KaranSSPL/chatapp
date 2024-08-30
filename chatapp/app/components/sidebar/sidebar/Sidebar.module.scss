@@ -1,0 +1,11 @@
+.sidebar {
+    height: 100%; /* h-full */
+  
+    .main-content {
+      @media (min-width: 1024px) { /* lg */
+        padding-left: 5rem; /* pl-20 */
+      }
+      height: 100%; /* h-full */
+    }
+  }
+  

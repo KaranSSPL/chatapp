@@ -1,0 +1,80 @@
+// AuthForm.module.scss
+
+.authContainer {
+  margin-top: 2rem;
+  max-width: 24rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.authBox {
+  background-color: white;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonWrapper {
+  margin-top: 1.5rem;
+}
+
+.divider {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #d1d5db;
+  }
+
+  &::before {
+    margin-right: 1rem;
+  }
+
+  &::after {
+    margin-left: 1rem;
+  }
+}
+
+.dividerText {
+  background-color: white;
+  padding: 0 0.5rem;
+  color: #6b7280;
+}
+
+.socialButtons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footerText {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.footerLink {
+  text-decoration: underline;
+  cursor: pointer;
+}

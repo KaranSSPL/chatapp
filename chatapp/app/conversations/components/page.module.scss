@@ -1,0 +1,113 @@
+/* module.scss */
+
+/* Styles for the container with various states */
+.container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Equivalent to space-x-3 */
+    padding: 0.75rem; /* Equivalent to p-3 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    background-color: #f9fafb; /* Neutral 100 background color */
+    
+    &.selected {
+      background-color: #f9fafb; /* Neutral 100 background color */
+    }
+  
+    .avatarGroup {
+      flex-shrink: 0;
+    }
+  
+    .content {
+      min-width: 0;
+      flex: 1;
+    }
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem; /* Equivalent to mb-1 */
+    }
+  
+    .name {
+      font-size: 1rem; /* Equivalent to text-md */
+      font-weight: 500; /* Equivalent to font-medium */
+      color: #1f2937; /* Gray 900 */
+    }
+  
+    .timestamp {
+      font-size: 0.75rem; /* Equivalent to text-xs */
+      color: #9ca3af; /* Gray 400 */
+      font-weight: 300; /* Equivalent to font-light */
+    }
+  
+    .message {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.875rem; /* Equivalent to text-sm */
+  
+      &.seen {
+        color: #6b7280; /* Gray 500 */
+      }
+  
+      &.unseen {
+        color: #000; /* Black */
+        font-weight: 500; /* Equivalent to font-medium */
+      }
+    }
+  }
+  
+  /* Styles for the sidebar container */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding-bottom: 5rem; /* Equivalent to pb-20 */
+    left: 0;
+    width: 20rem; /* Equivalent to lg:w-80 */
+    display: block;
+    overflow-y: auto;
+    border-right: 1px solid #e5e7eb; /* Border gray 200 */
+  
+    &.hidden {
+      display: none;
+    }
+  
+    &.visible {
+      display: block;
+      width: 100%;
+      left: 0;
+    }
+  }
+  
+  /* Styles for header and button */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+    padding-top: 1rem; /* Equivalent to pt-4 */
+  }
+  
+  .title {
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #374151; /* Neutral 800 */
+  }
+  
+  .addButton {
+    border-radius: 9999px; /* Equivalent to rounded-full */
+    padding: 0.5rem; /* Equivalent to p-2 */
+    background-color: #f3f4f6; /* Gray 100 */
+    color: #4b5563; /* Gray 600 */
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  

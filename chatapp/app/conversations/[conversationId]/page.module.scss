@@ -1,0 +1,10 @@
+.container {
+    padding-left: 20rem; /* Equivalent to lg:pl-80 */
+    height: 100vh; /* Equivalent to h-full */
+  }
+  
+  .inner-container {
+    height: 100%; /* Equivalent to h-full */
+    display: flex; /* Equivalent to flex */
+    flex-direction: column; /* Equivalent to flex-col */
+  }
