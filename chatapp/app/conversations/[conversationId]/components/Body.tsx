@@ -12,8 +12,7 @@ import styles from "./page.module.scss";
 interface BodyProps {
   initialMessages: FullMessageType[];
 }
-
-const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
+const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => { 
   const bottomRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState(initialMessages);
   

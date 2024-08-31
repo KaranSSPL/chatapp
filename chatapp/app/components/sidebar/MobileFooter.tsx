@@ -2,8 +2,8 @@
 
 import useConversation from "@/app/hooks/useConversation";
 import useRoutes from "@/app/hooks/useRoutes";
-import MobileItem from "../MobileItem/MobileItem";
-import styles from "./MobileFooter.module.scss";
+import MobileItem from "./MobileItem";
+import styles from "./Sidebar.module.scss";
 
 const MobileFooter = () => {
   const routes = useRoutes();
@@ -14,7 +14,7 @@ const MobileFooter = () => {
   }
 
   return (
-    <div className={styles["mobile-footer"]}>
+    <div className={styles.mobileFooter}>
       {routes.map((route) => (
         <MobileItem
           key={route.href}

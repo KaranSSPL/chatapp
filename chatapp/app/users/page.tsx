@@ -1,8 +1,8 @@
 import EmptyState from '../components/EmptyState';
-
+import styles from "./page.module.scss"
 const People = () => {
   return (
-    <div className="hidden lg:block lg:pl-80 h-full">
+    <div className= {styles.container}>
       <EmptyState />
     </div>
    );

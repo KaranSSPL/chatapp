@@ -1,7 +1,7 @@
 import getCurrentUser from '@/app/actions/getCurrentUser';
-import DesktopSidebar from '../DesktopSidebar/DesktopSidebar';
+import DesktopSidebar from './DesktopSidebar';
 import styles from './Sidebar.module.scss';
-import MobileFooter from '../MobileFooter/MobileFooter';
+import MobileFooter from './MobileFooter';
 
 async function Sidebar({ children }: { children: React.ReactNode }) {
   const currentUser = await getCurrentUser();
@@ -10,7 +10,7 @@ async function Sidebar({ children }: { children: React.ReactNode }) {
     <div className={styles.sidebar}>
       <DesktopSidebar currentUser={currentUser!} />
       <MobileFooter />
-      <main className={styles['main-content']}>
+      <main className={styles.mainContent}>
         {children}
       </main>
     </div>

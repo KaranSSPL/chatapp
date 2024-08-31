@@ -1,16 +1,16 @@
-/* module.scss */
-
-/* Styles for the container with responsive and visibility states */
+.main{
+  width: 100%;
+}
 .container {
     padding-left: 20rem; /* Equivalent to lg:pl-80 */
     height: 100vh; /* Equivalent to h-full */
     display: block; /* Default state for lg:block */
   
-    &.hidden {
+    .hidden {
       display: none; /* Equivalent to hidden */
     }
   
-    &.visible {
+    .visible {
       display: block; /* Equivalent to block */
     }
   }

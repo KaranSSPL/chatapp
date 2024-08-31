@@ -1,6 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
-import styles from "./MobileItem.module.scss";
+import styles from "./Sidebar.module.scss";
 
 interface MobileItemProps {
   href: string;
@@ -26,8 +26,8 @@ const MobileItem: React.FC<MobileItemProps> = ({
       onClick={handleClick}
       href={href}
       className={clsx(
-        styles["mobile-item"],
-        active && styles["active"]
+        styles.mobileItem,
+        active && styles.active
       )}
     >
       <Icon className={styles.icon} />

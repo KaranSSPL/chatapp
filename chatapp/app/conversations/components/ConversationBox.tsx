@@ -69,13 +69,13 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
       onClick={handleClick}
       className={clsx(
         styles.container,
-        selected && 'selected'
+        selected &&  styles.selected
       )}
     >
         <Avatar user={otherUser} />
       <div className={styles.content}>
-        <div className="focus:outline-none">
-          <span className="absolute inset-0" aria-hidden="true" />
+        <div className={styles.contentBox}>
+          <span className={styles.span} aria-hidden="true" />
           <div className={styles.header}>
             <p className={styles.name}>
               {data.name || otherUser.name}

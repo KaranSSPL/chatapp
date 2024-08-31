@@ -1,5 +1,3 @@
-// AuthForm.module.scss
-
 .authContainer {
   margin-top: 2rem;
   max-width: 24rem;
@@ -28,6 +26,7 @@
 
 .buttonWrapper {
   margin-top: 1.5rem;
+  cursor: pointer; 
 }
 
 .divider {

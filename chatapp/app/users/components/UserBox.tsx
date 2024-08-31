@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { User } from "@prisma/client";
 
 import Avatar from "@/app/components/Avatar";
-import styles from "./page.module.scss"; // Import the SCSS module
+import styles from "./page.module.scss"; 
 
 interface UserBoxProps {
   data: User;
@@ -29,10 +29,10 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
       onClick={handleClick}
       className={styles.userBox}
     >
-      <Avatar user={data} className={styles.avatar} />
+      <Avatar user={data} />
       <div className={styles.content}>
-        <div className="focus:outline-none">
-          <span className="absolute inset-0" aria-hidden="true" />
+        <div className={styles.focus}>
+          <span className={styles.span} aria-hidden="true" />
           <div className={styles.header}>
             <p className={styles.name}>
               {data.name}

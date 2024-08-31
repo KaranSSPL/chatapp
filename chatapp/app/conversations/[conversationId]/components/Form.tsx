@@ -42,7 +42,7 @@ const Form = () => {
     <div className={styles.formContainer}>
       <form 
         onSubmit={handleSubmit(onSubmit)} 
-        className="flex items-center gap-2 lg:gap-4 w-full"
+        className={styles.input}
       >
         <MessageInput 
           id="message" 

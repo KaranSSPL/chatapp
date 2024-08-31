@@ -1,11 +1,11 @@
 'use client';
 
-import DesktopItem from "../DesktopItem/DesktopItem";
+import DesktopItem from "./DesktopItem";
 import useRoutes from "@/app/hooks/useRoutes";
 import { useState } from "react";
-import Avatar from "../../Avatar";
+import Avatar from "../Avatar";
 import { User } from "@prisma/client";
-import styles from "./DesktopSidebar.module.scss";
+import styles from "./Sidebar.module.scss";
 
 interface DesktopSidebarProps {
   currentUser: User;
@@ -18,9 +18,9 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   console.log({ currentUser }, 'TEST');
 
   return (
-    <div className={styles["desktop-sidebar"]}>
+    <div className={styles.desktopSidebar}>
       <nav className={styles.nav}>
-        <ul role="list" className={styles["nav-items"]}>
+        <ul role="list" className={styles.navItems}>
           {routes.map((item) => (
             <DesktopItem
               key={item.label}
@@ -33,10 +33,10 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
           ))}
         </ul>
       </nav>
-      <nav className={styles["nav-avatar"]}>
+      <nav className={styles.navAvatar}>
         <div
           onClick={() => setIsOpen(true)}
-          className={styles["avatar-container"]}
+          className={styles.navContainer}
         >
           <Avatar user={currentUser} />
         </div>

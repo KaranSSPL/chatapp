@@ -80,10 +80,10 @@ const ConversationList: React.FC<ConversationListProps> = ({
   return (
     <>
       <div className={clsx(
-        styles.container,
-        isOpen ? 'hidden' : 'visible'
+        styles.sidebar,
+        isOpen ? styles.hidden : styles.visible
       )}>
-        <div className="px-5">
+        <div className={styles.main}>
           <div className={styles.header}>
             <div className={styles.title}>
               Messages
