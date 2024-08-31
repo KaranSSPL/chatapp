@@ -2,9 +2,11 @@ Welcome to ChatApp, a real-time chat application. This project uses modern techn
 
 To get the project up and running, navigate to the chatapp folder and install the necessary dependencies:
 
+```
 cd chatapp
 npm install
 npm run dev
+````
 
 Technologies Used:
 
