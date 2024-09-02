@@ -13,7 +13,6 @@ Setup:
 
 1.Clone the Repository:
 git clone <repository-url>
-cd chatapp
 
 2.Install Dependencies:
 npm install

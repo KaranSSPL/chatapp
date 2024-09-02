@@ -1,5 +1,4 @@
 import { User } from "@prisma/client";
-import useActiveList from "../hooks/useActiveList";
 import Image from "next/image";
 import styles from "./page.module.scss";
 
@@ -8,7 +7,6 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<AvatarProps> = ({ user }) => {
-  const { members } = useActiveList();
 
   return (
     <div className={styles.avatar}>

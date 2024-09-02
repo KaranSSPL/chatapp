@@ -78,7 +78,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
           <span className={styles.span} aria-hidden="true" />
           <div className={styles.header}>
             <p className={styles.name}>
-              {data.name || otherUser.name}
+              {data.name || otherUser?.name}
             </p>
             {lastMessage?.createdAt && (
               <p className={styles.timestamp}>
