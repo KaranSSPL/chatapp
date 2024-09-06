@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
-import { format } from "date-fns";
-import { useSession } from "next-auth/react";
-import { FullMessageType } from "@/app/types";
+import clsx from 'clsx';
+import { format } from 'date-fns';
+import { useSession } from 'next-auth/react';
+import { FullMessageType } from '@/app/types';
 
-import Avatar from "@/app/components/Avatar";
-import styles from "./page.module.scss";
+import Avatar from '@/app/components/Avatar';
+import styles from './page.module.scss';
 
 interface MessageBoxProps {
   data: FullMessageType;
@@ -20,7 +20,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
   const seenList = (data.seen || [])
     .filter((user) => user.email !== data?.sender?.email)
     .map((user) => user.name)
-    .join(", ");
+    .join(', ');
 
   return (
     <div className={clsx(styles.messageContainer, isOwn && styles.isOwn)}>
@@ -30,7 +30,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
       <div className={clsx(styles.body, isOwn && styles.isOwn)}>
         <div className={styles.senderName}>
           <div className={styles.senderData}>{data.sender.name}</div>
-          <div className={styles.date}>{format(new Date(data.createdAt), "p")}</div>
+          <div className={styles.date}>{format(new Date(data.createdAt), 'p')}</div>
         </div>
         <div className={clsx(styles.message, data.image ? styles.hasImage : styles.noImage)}>
           <div>{data.body}</div>

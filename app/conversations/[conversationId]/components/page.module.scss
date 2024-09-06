@@ -1,3 +1,4 @@
+@import "../../../variable.scss";
 .bodyContainer {
   display: flex;
   flex-direction: column;
@@ -6,11 +7,10 @@
 }
 
 .bottomRef {
-  padding-top: 6rem; /* pt-24 */
+  padding-top: 6rem; 
 }
 
 .formContainer {
-  padding: 1rem;
   background-color: #fff;
   border-top: 1px solid #e5e7eb;
   display: flex;
@@ -24,17 +24,17 @@
     gap: 0.5rem;
 
     .submitButton {
-      border-radius: 9999px; /* rounded-full */
-      padding: 0.5rem; /* p-2 */
-      background-color: #0ea5e9; /* bg-sky-500 */
+      border-radius: 9999px; 
+      padding: 0.5rem; 
+      background-color: #0ea5e9; 
       cursor: pointer;
       transition: background-color 0.2s;
 
       &:hover {
-        background-color: #0284c7; /* hover:bg-sky-600 */
+        background-color: #0284c7; 
       }
       .icon {
-        color: #fff; /* text-white */
+        color: #fff; 
       }
     }
     @media (min-width: 1024px) {
@@ -43,24 +43,26 @@
     }
   }
   @media (min-width: 1024px) {
-    /* lg breakpoint */
+    
     gap: 1rem;
   }
 }
 
 .headerContainer {
-  background-color: #fff; /* bg-white */
-  width: 100%;
+  background-color: #fff; 
+  // width: 100%;
   display: flex;
-  border-bottom: 1px solid #e5e7eb; /* border-b-[1px] */
-  padding: 0.75rem 1rem; /* py-3 px-4 */
+  border-bottom: 1px solid #e5e7eb; 
+  padding: 0.75rem 1rem; 
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); 
+  justify-content: space-between;
+
 
   .userInfo {
     display: flex;
-    gap: 0.75rem; /* gap-3 */
+    gap: 0.75rem; 
     align-items: center;
 
     .userName {
@@ -68,77 +70,79 @@
       flex-direction: column;
     }
   }
+  .delete{
+    font-size:larger;
+    cursor: pointer;
+  }
 
   @media (min-width: 640px) {
-    /* sm breakpoint */
-    padding: 0.75rem 1rem; /* sm:px-4 */
+    padding: 0.75rem 1rem; 
   }
 
   @media (min-width: 1024px) {
-    /* lg breakpoint */
-    padding: 0.75rem 1.5rem; /* lg:px-6 */
+    
+    padding: 0.75rem 1.5rem; 
   }
 }
 
 .messageContainer {
   display: flex;
-  gap: 0.75rem; /* gap-3 */
-  padding: 1rem; /* p-4 */
+  gap: 0.75rem; 
+  padding: 1rem; 
   .isOwn {
-    justify-content: flex-end; /* justify-end */
+    justify-content: flex-end; 
   }
   .avatar {
-    @media (min-width: 640px) {
-      /* responsive order for sm breakpoint */
+    @media (min-width: 640px) {      
       order: 2;
     }
   }
   .body {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* gap-2 */
+    gap: 0.5rem; 
     .isOwn {
-      align-items: flex-end; /* items-end */
+      align-items: flex-end; 
     }
     .senderName {
       display: flex;
       align-items: center;
-      gap: 0.25rem; /* 4px */
+      gap: 0.25rem; 
 
       .senderData {
-        font-size: 0.875rem; /* 14px */
-        line-height: 1.25rem; /* 20px */
+        font-size: $button-font-size; 
+        line-height: 1.25rem; 
         color: rgb(107 114 128);
       }
       .date {
-        font-size: 0.75rem; /* 12px */
-        line-height: 1rem; /* 16px */
+        font-size: 0.75rem; 
+        line-height: 1rem; 
         color: rgb(107 114 128);
       }
     }
 
     .seenList {
-      font-size: 0.75rem; /* text-xs */
-      font-weight: 300; /* font-light */
-      color: #6b7280; /* text-gray-500 */
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #6b7280; 
     }
   }
   .message {
-    font-size: 0.875rem; /* text-sm */
+    font-size: $button-font-size; 
     width: fit-content;
     overflow: hidden;
-    border-radius: 9999px; /* rounded-full */
-    padding: 0.5rem 0.75rem; /* py-2 px-3 */
+    border-radius: 9999px; 
+    padding: 0.5rem 0.75rem; 
     .isOwn {
-      background-color: #0284c7; /* bg-sky-500 */
-      color: #ffffff; /* text-white */
+      background-color: #0284c7; 
+      color: #ffffff; 
     }
     .hasImage {
-      border-radius: 0.375rem; /* rounded-md */
+      border-radius: 0.375rem;
       padding: 0;
     }
     .noImage {
-      background-color: #f3f4f6; /* bg-gray-100 */
+      background-color: $background-color-light; 
     }
   }
 }
@@ -148,12 +152,12 @@
   margin: 20px;
 
   .inputField {
-    color: #000; /* text-black */
-    font-weight: 300; /* font-light */
-    padding: 0.5rem 1rem; /* py-2 px-4 */
-    background-color: #f3f4f6; /* bg-neutral-100 */
+    color: #000; 
+    font-weight: 300; 
+    padding: 0.5rem 1rem;
+    background-color: $background-color-light;
     width: 100%;
-    border-radius: 9999px; /* rounded-full */
-    outline: none; /* focus:outline-none */
+    border-radius: 9999px; 
+    outline: none;
   }
 }

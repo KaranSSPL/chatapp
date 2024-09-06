@@ -10,7 +10,7 @@ interface IParams {
   conversationId: string;
 }
 
-const ChatId = async ({ params }: { params: IParams }) => {
+const ChatId = async({ params }: { params: IParams }) => {
   const conversation = await getConversationById(params.conversationId);
   const messages = await getMessages(params.conversationId);
 
@@ -28,7 +28,7 @@ const ChatId = async ({ params }: { params: IParams }) => {
     <div className={styles.container}>
       <div className={styles.content}>
         <Header conversation={conversation} />
-        <Body initialMessages={messages} />
+        <Body initialMessages={messages} />   
         <Form />
       </div>
     </div>

@@ -4,7 +4,6 @@ import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useEffect, useMemo, useState } from "react";
-import { MdOutlineGroupAdd } from 'react-icons/md';
 import clsx from "clsx";
 import { find } from 'lodash';
 
@@ -22,10 +21,8 @@ interface ConversationListProps {
 
 const ConversationList: React.FC<ConversationListProps> = ({ 
   initialItems, 
-  users
 }) => {
   const [items, setItems] = useState(initialItems);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const router = useRouter();
   const session = useSession();
@@ -67,14 +64,24 @@ const ConversationList: React.FC<ConversationListProps> = ({
     }
 
     const removeHandler = (conversation: FullConversationType) => {
-      setItems((current) => {
+      setItems((current) => { 
         return [...current.filter((convo) => convo.id !== conversation.id)]
       });
     }
 
-    pusherClient.bind('conversation:update', updateHandler)
-    pusherClient.bind('conversation:new', newHandler)
-    pusherClient.bind('conversation:remove', removeHandler)
+    
+
+    // pusherClient.bind('conversation:update', updateHandler)
+    // pusherClient.bind('conversation:new', newHandler)
+    // pusherClient.bind('conversation:remove', removeHandler)
+  
+    return () => {
+      pusherClient.unbind('conversation:update', updateHandler);
+      pusherClient.unbind('conversation:new', newHandler);
+      pusherClient.unbind('conversation:remove', removeHandler);
+      pusherClient.unsubscribe(pusherKey);
+    };
+
   }, [pusherKey, router]);
 
   return (

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import { pusherServer } from '@/app/libs/pusher'
-import prisma from "@/app/libs/prismadb";
+import prisma from "@/app/libs/prisma";
 
 interface IParams {
   conversationId?: string;
@@ -83,7 +83,6 @@ export async function POST(
 
     return new NextResponse('Success');
   } catch (error) {
-    console.log(error, 'ERROR_MESSAGES_SEEN')
     return new NextResponse('Error', { status: 500 });
   }
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import useConversation from "@/app/hooks/useConversation";
-import useRoutes from "@/app/hooks/useRoutes";
-import MobileItem from "./MobileItem";
-import styles from "./Sidebar.module.scss";
+import useConversation from '@/app/hooks/useConversation';
+import useRoutes from '@/app/hooks/useRoutes';
+import MobileItem from './MobileItem';
+import styles from './Sidebar.module.scss';
 
 const MobileFooter = () => {
   const routes = useRoutes();
@@ -16,13 +16,7 @@ const MobileFooter = () => {
   return (
     <div className={styles.mobileFooter}>
       {routes.map((route) => (
-        <MobileItem
-          key={route.href}
-          href={route.href}
-          active={route.active}
-          icon={route.icon}
-          onClick={route.onClick}
-        />
+        <MobileItem key={route.href} href={route.href} active={route.active} icon={route.icon} onClick={route.onClick} />
       ))}
     </div>
   );

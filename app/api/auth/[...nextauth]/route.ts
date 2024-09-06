@@ -3,7 +3,7 @@ import NextAuth, { AuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 
-import prisma from "@/app/libs/prismadb"
+import prisma from "@/app/libs/prisma"
 
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -15,9 +15,7 @@ export const authOptions: AuthOptions = {
         password: { label: 'password', type: 'password' }
       },
       async authorize(credentials) {
-        console.log("credentials",credentials)
         if (!credentials?.email || !credentials?.password) {
-          console.log("Missing credentials");
           throw new Error('Invalid credentials');
         }
 
@@ -28,7 +26,6 @@ export const authOptions: AuthOptions = {
         });
 
         if (!user || !user?.hashedPassword) {
-          console.log("User not found or no hashed password");
           throw new Error('Invalid credentials');
         }
 
@@ -38,7 +35,6 @@ export const authOptions: AuthOptions = {
         );
 
         if (!isCorrectPassword) {
-          console.log("Password does not match");
           throw new Error('Invalid credentials');
         }
 

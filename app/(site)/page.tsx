@@ -12,53 +12,41 @@ type Variant = "LOGIN" | "REGISTER";
 
 const Auth = () => {
   const router = useRouter();
-
   const [variant, setVariant] = useState<Variant>("LOGIN");
 
   const toggleVariant = useCallback(() => {
-    if (variant === "LOGIN") {
-      setVariant("REGISTER");
-    } else {
-      setVariant("LOGIN");
-    }
-  }, [variant]);
+    setVariant(prevVariant => prevVariant === "LOGIN" ? "REGISTER" : "LOGIN");
+  }, []);
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    if (variant === "REGISTER") {
-      axios
-        .post("/api/register", data)
-        .then(() =>
-          signIn("credentials", {
-            ...data,
-            redirect: false,
-          })
-        )
-        .then((callback) => {
-          if (callback?.error) {
-            throw new Error("Invalid credentials");
-          }
-
-          if (callback?.ok) {
-            router.push("/conversations");
-          }
-        })
-        .catch(() => console.log("Invalid credentials!"));
-    }
-
-    if (variant === "LOGIN") {
-      console.log("login");
-      signIn("credentials", {
+  const handleSignIn = async (data: FieldValues) => {
+    try {
+      const callback = await signIn("credentials", {
         ...data,
         redirect: false,
-      }).then((callback) => {
-        if (callback?.error) {
-          console.log("Invalid credentials !");
-        }
-
-        if (callback?.ok && !callback?.error) {
-          router.push("/conversations");
-        }
       });
+
+      if (callback?.error) {
+        throw new Error("Invalid credentials");
+      }
+
+      if (callback?.ok) {
+        router.push("/conversations");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    if (variant === "REGISTER") {
+      try {
+        await axios.post("/api/register", data);
+        await handleSignIn(data);
+      } catch (error) {
+        console.error(error);
+      }
+    } else if (variant === "LOGIN") {
+      await handleSignIn(data);
     }
   };
 

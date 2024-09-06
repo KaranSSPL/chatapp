@@ -1,6 +1,6 @@
-import Link from "next/link";
-import clsx from "clsx";
-import styles from "./Sidebar.module.scss";
+import Link from 'next/link';
+import clsx from 'clsx';
+import styles from './Sidebar.module.scss';
 
 interface MobileItemProps {
   href: string;
@@ -9,12 +9,7 @@ interface MobileItemProps {
   onClick?: () => void;
 }
 
-const MobileItem: React.FC<MobileItemProps> = ({
-  href,
-  icon: Icon,
-  active,
-  onClick
-}) => {
+const MobileItem: React.FC<MobileItemProps> = ({ href, icon: Icon, active, onClick }) => {
   const handleClick = () => {
     if (onClick) {
       return onClick();
@@ -22,14 +17,7 @@ const MobileItem: React.FC<MobileItemProps> = ({
   };
 
   return (
-    <Link
-      onClick={handleClick}
-      href={href}
-      className={clsx(
-        styles.mobileItem,
-        active && styles.active
-      )}
-    >
+    <Link onClick={handleClick} href={href} className={clsx(styles.mobileItem, active && styles.active)}>
       <Icon className={styles.icon} />
     </Link>
   );

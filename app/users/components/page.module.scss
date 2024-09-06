@@ -1,19 +1,18 @@
-/* UserBox.module.scss */
-
+@import '../../variable.scss';
 .userBox {
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* Equivalent to space-x-3 */
-  background-color: #ffffff; /* Equivalent to bg-white */
-  padding: 0.75rem; /* Equivalent to p-3 */
-  border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  gap: 0.75rem; 
+  background-color: #ffffff; 
+  padding: 0.75rem; 
+  border-radius: $border-radius-sm; 
   transition: background-color 0.2s ease;
   cursor: pointer;
 
   &:hover {
-    background-color: #f9fafb; /* Equivalent to hover:bg-neutral-100 */
+    background-color: #f9fafb; 
   }
 
   .avatar {
@@ -21,20 +20,17 @@
   }
 
   .content {
-    min-width: 0;
-    flex: 1;
-
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.25rem; /* Equivalent to mb-1 */
+      margin-bottom: 0.25rem; 
     }
 
     .name {
-      font-size: 0.875rem; /* Equivalent to text-sm */
-      font-weight: 500; /* Equivalent to font-medium */
-      color: #1f2937; /* Equivalent to text-gray-900 */
+      font-size: $button-font-size; 
+      font-weight: 500; 
+      color: $color-text-advance; 
     }
     &:focus {
       outline: 2px solid transparent;
@@ -47,21 +43,20 @@
   }
 }
 
-/* UserList.module.scss */
-
 .userList {
   position: fixed;
   top: 0;
+  padding-right: 1rem;
+  padding-left: 123px;
   bottom: 0;
-  padding-bottom: 5rem; /* Equivalent to pb-20 */
-  left: 123px;
-  width: 20rem; /* Equivalent to lg:w-80 */
-  display: block; /* Default display for lg:block */
-  border-right: 1px solid #e5e7eb; /* Equivalent to border-gray-200 */
-  background-color: #ffffff; /* White background color */
+  padding-bottom: 5rem; 
+  // left: 123px;
+  display: block; 
+  border-right: 1px solid #e5e7eb; 
+  background-color: #ffffff; 
 
   .hidden {
-    display: none; /* Equivalent to hidden */
+    display: none; 
   }
 
   .visible {
@@ -69,19 +64,19 @@
   }
 
   .header {
-    padding: 0 1.25rem; /* Equivalent to px-5 */
+    padding: 0 1.25rem; 
 
     .title {
-      font-size: 1.5rem; /* Equivalent to text-2xl */
-      font-weight: 700; /* Equivalent to font-bold */
-      color: #374151; /* Equivalent to text-neutral-800 */
-      padding-top: 1rem; /* Equivalent to py-4 */
+      font-size: 1.5rem; 
+      font-weight: 700; 
+      color: #374151; 
+      padding-top: 1rem; 
     }
   }
 
   .content {
     display: flex;
-    flex-direction: column; /* Equivalent to flex-col */
+    flex-direction: column; 
     width: 90%;
   }
 }
