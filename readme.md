@@ -22,15 +22,21 @@ npm install
 -Replace the DATABASE_URL with your MongoDB Atlas connection string. For example:
 DATABASE_URL="<URL>"
 
-4.Pusher Configuration:
+4.Next Auth Configuration:
+NEXTAUTH_SECRET= ""
+
+5.Pusher Configuration:
 In the same .env file, configure your Pusher credentials.
 PUSHER_APP_ID=<your-pusher-app-id>
-PUSHER_KEY=<your-pusher-key>
+NEXT_PUBLIC_PUSHER_APP_KEY=<your-pusher-key>
 PUSHER_SECRET=<your-pusher-secret>
 
 You can find these credentials in your Pusher Dashboard.
 
-5.Run the Application:
+6.Node Environment Configuration:
+NODE_ENV = "development"
+
+7.Run the Application:
 npm run dev
 The application will be available at http://localhost:3000.
 
